@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>社員体調管理画面</title>
+  </head>
+  <body class="text-gray-600">
+    <!-- 社員情報 -->
+    <div class="mt-16 ml-20 text-sm md:flex md:justify-between md:text-xl">
+      <div>
+        <p class="pr-5">社員 : ○○○○○</p>
+        <p class="pr-5">社員番号 : ○○○○○</p>
+        <p class="pr-5">2021/6/14 : AM:11:00</p>
+      </div>
+
+      <!-- ログアウトボタン onclickの中にログアウト処理を書く -->
+      <input
+        type="submit"
+        class="fixed h-6 px-2 text-sm text-gray-500 bg-white border-2 border-gray-500 cursor-pointer  top-14 right-5 rounded-3xl md:px-5 md:text-base md:mr-5 md:h-10 hover:bg-gray-100"
+        onclick="location.href='index_emp.html'"
+        value="ログアウト"
+      />
+    </div>
+    <!-- 体調情報 -->
+    <div class="flex mt-24 justify-evenly md:mt-48">
+      <!-- 血圧 -->
+      <div class="card">
+        <p class="text-xs text-center md:text-2xl">血圧</p>
+        <div class="text-center">
+          <p class="text-red-500">最高:120mmHg</p>
+          <p class="text-blue-500">最低:120mmHg</p>
+          <p class="mt-5 text-sm">
+            <a
+              href="graph_emp.html"
+              class="text-xs border-b border-gray-600  md:text-base hover:text-black hover:border-black"
+              >1週間のグラフを見る</a
+            >
+          </p>
+        </div>
+      </div>
+      <!-- 脈拍 -->
+      <div class="card">
+        <p class="text-xs text-center md:text-2xl">脈拍</p>
+        <div class="mt-6 text-center md:mt-10"><p>70 拍 / 分</p></div>
+      </div>
+      <!-- 体温 -->
+      <div class="card">
+        <p class="text-xs text-center md:text-2xl">体温</p>
+        <div class="text-center mt-7">
+          <p>今日 : 36.5℃</p>
+          <p>昨日 : 36.5℃</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 面談日程ボタン -->
+    <div class="flex justify-center mt-14">
+      <input
+        type="submit"
+        onclick="location.href='interview_emp.html'"
+        class="px-10 py-1 text-sm text-white bg-gray-500 cursor-pointer  rounded-3xl md:py-2 md:px-20 md:text-xl hover:bg-gray-700"
+        value="面談日程確認"
+      />
+    </div>
+  </body>
+</html>

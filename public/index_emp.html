@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>社員ログイン</title>
+  </head>
+  <body class="text-gray-600">
+    <div>
+      <h1 class="text-xl flex justify-center md:text-3xl mt-48">
+        社員ログイン
+      </h1>
+      <!-- 入力フォーム -->
+      <div class="flex justify-center mt-5">
+        <form action="info_emp.html">
+          <!-- 社員番号 -->
+          <div class="my-6">
+            <input
+              type="text"
+              placeholder="社員番号"
+              class="
+                text-xs
+                w-56
+                md:w-96 md:text-base
+                text-center
+                border-b border-gray-700
+                focus:outline-none
+                hover:border-black
+              "
+            />
+          </div>
+          <!-- パスワード -->
+          <div class="my-6">
+            <input
+              placeholder="パスワード"
+              type="password"
+              class="
+                text-xs
+                w-56
+                md:w-96 md:text-base
+                text-center
+                border-b border-gray-700
+                focus:outline-none
+                hover:border-black
+              "
+            />
+          </div>
+          <!-- パスワード忘れリンク -->
+          <div class="flex justify-center md:justify-end">
+            <a
+              href="#"
+              class="
+                text-xs
+                md:text-sm
+                text-gray-400
+                border-b-2 border-gray-400
+                hover:text-gray-800 hover:border-gray-800
+              "
+              >パスワードを忘れた場合はこちら</a
+            >
+          </div>
+          <!-- ログインボタン -->
+          <div class="flex justify-center mt-14">
+            <input
+              type="submit"
+              class="
+                bg-gray-500
+                text-white
+                flex
+                justify-center
+                rounded-3xl
+                py-1
+                px-10
+                text-sm
+                md:py-2 md:px-10 md:text-lg
+                hover:bg-gray-700
+                cursor-pointer
+              "
+              value="ログイン"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
