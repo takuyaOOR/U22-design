@@ -11,11 +11,30 @@ today = document.getElementById("today");
 today.textContent =
   year.toString() + "年" + month.toString() + "月" + day.toString() + "日 現在";
 
-// 絞り込みボタン読み込
+// 絞り込みボタン読み込み
 narrow_btn = document.getElementById("narrow_btn");
-narrow_btn.addEventListener("click", () => {
-  console.log("絞り込みボタンがクリックされました");
-});
+
+//モーダルの要素を読み込み
+modal = document.getElementById("modal");
+
+//絞り込みボタンにイベントを追加
+narrow_btn.addEventListener("click", showModal);
+
+//モーダル表示用関数
+function showModal() {
+  console.log("モーダル表示中");
+  modal.classList.remove("invisible");
+}
+
+batsu_btn = document.getElementById("batsu");
+
+batsu_btn.addEventListener("click", hideModal);
+
+//モーダル非表示用関数
+function hideModal() {
+  console.log("モーダル非表示中");
+  modal.classList.add("invisible");
+}
 
 //表示順ボタン
 order_left_btn = document.getElementById("order_left_btn");
@@ -25,22 +44,16 @@ order_right_btn = document.getElementById("order_right_btn");
 //0: 50音順 1:入社順
 var order_btn_flag = 0;
 
-order_disp = document.getElementById("order_disp");
-
 order_left_btn.addEventListener("click", function () {
   order_btn_flag = 0;
   order_left_btn.innerHTML = "&#10003;50音順";
   order_right_btn.innerHTML = "入社順";
-  order_disp.innerHTML = "表示:50音順";
-
-  console.log("表示:50音順", order_btn_flag);
 });
 
 order_right_btn.addEventListener("click", function () {
   order_btn_flag = 1;
   order_left_btn.innerHTML = "50音順";
   order_right_btn.innerHTML = "&#10003;入社順";
-  order_disp.innerHTML = "表示:入社順";
-
-  console.log("表示:入社順", order_btn_flag);
 });
+
+// アコーディオンメニュー
