@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>社員追加画面</title>
+  </head>
+  <body class="text-gray-600">
+    <!-- プロフィール表示欄 -->
+    <div class="grid grid-cols-1 mt-20 md:grid-cols-4">
+      <!-- プロフィール写真欄 -->
+      <div class="text-center">
+        <img
+          id="file-preview"
+          src="img/profile_icon.png"
+          alt="プロフィール写真"
+          class="object-cover w-40 h-40 mx-auto mb-3 rounded-full"
+        />
+
+        <!-- 写真選択 -->
+        <label
+          for="file_photo"
+          class="px-6 py-2 text-white bg-blue-500 rounded-lg cursor-pointer  hover:bg-blue-700"
+        >
+          写真を選択
+          <input type="file" id="file_photo" class="hidden" />
+        </label>
+
+        <!-- <input id="file-sample" type="file" />
+        <img id="file-preview" class="w-40 h-40 mx-auto rounded-full" /> -->
+
+        <div class="mt-5">
+          <input
+            type="text"
+            placeholder="名前"
+            class="w-40 text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="英語表記"
+            class="w-40 text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+          />
+        </div>
+      </div>
+      <!-- 基本情報入力欄 -->
+      <div class="w-full col-span-2 mt-8 md:mt-28">
+        <h3 class="text-center md:text-left">社員情報入力</h3>
+        <form action="#">
+          <table class="w-full mt-5 border border-gray-300 table-auto">
+            <tr>
+              <td class="w-2/5 bg-gray-200">社員番号</td>
+              <td class="w-3/5">
+                <input
+                  type="text"
+                  placeholder="社員番号"
+                  class="text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">性別</td>
+              <td>
+                <select name="sex" class="border-b-2 focus:outline-none">
+                  <option value="man">男</option>
+                  <option value="woman">女</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">年齢</td>
+              <td>
+                <select name="age" class="border-b-2 focus:outline-none">
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                  <option value="60">60</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">入社日</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="入社日"
+                  class="text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">生年月日</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="生年月日"
+                  class="text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">部署</td>
+              <td>
+                <select name="depart">
+                  <option value="">営業部</option>
+                  <option value="">開発部</option>
+                  <option value="">人事部</option>
+                  <option value="">総務部</option>
+                  <option value="">経理部</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">役職</td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="営業"
+                  class="text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td class="bg-gray-200">メール</td>
+              <td>
+                <input
+                  type="email"
+                  placeholder="メールアドレス"
+                  class="text-center placeholder-gray-600 border-b-2  focus:placeholder-gray-300 focus:outline-none"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <div
+        class="flex items-center mt-10 text-center  justify-evenly md:flex md:flex-col md:justify-between"
+      >
+        <button
+          class="px-10 py-1 text-sm text-white bg-gray-500 cursor-pointer  rounded-3xl md:py-2 md:px-10 md:text-lg hover:bg-gray-700"
+        >
+          社員追加
+        </button>
+        <div>
+          <a href="emp_list_admin.html">社員一覧に戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ファイルプレビュー用スクリプト -->
+    <script>
+      document
+        .getElementById("file_photo")
+        .addEventListener("change", function (e) {
+          // 1枚だけ表示する
+          var file = e.target.files[0];
+
+          // ファイルのブラウザ上でのURLを取得する
+          var blobUrl = window.URL.createObjectURL(file);
+
+          // img要素に表示
+          var img = document.getElementById("file-preview");
+
+          img.src = blobUrl;
+        });
+    </script>
+  </body>
+</html>

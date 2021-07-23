@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>社員詳細画面</title>
+  </head>
+  <body class="text-gray-600">
+    <!-- プロフィール表示欄 -->
+    <div class="grid grid-cols-1 mt-20 md:grid-cols-4">
+      <!-- プロフィール写真欄 -->
+      <div class="text-center">
+        <img
+          src="img/profile_icon.png"
+          alt="プロフィール写真"
+          class="w-40 h-40 mx-auto"
+        />
+        <h2 class="text-xl">弓場賢義</h2>
+        <h4>Yumiba Takaaki</h4>
+      </div>
+      <!-- 基本情報表示欄 -->
+      <div class="w-full col-span-2 mt-8 md:mt-28">
+        <h3 class="text-center md:text-left">基本情報</h3>
+        <table class="w-full mt-5 border border-gray-300 table-auto">
+          <tr>
+            <td class="w-2/5 bg-gray-200">社員番号</td>
+            <td class="w-3/5">A12345</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">性別</td>
+            <td>男</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">年齢</td>
+            <td>21歳</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">入社日</td>
+            <td>2021/4/1</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">生年月日</td>
+            <td>1999/6/11</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">部署</td>
+            <td>開発部</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">役職</td>
+            <td>エンジニア</td>
+          </tr>
+          <tr>
+            <td class="bg-gray-200">メール</td>
+            <td>12345@sample.com</td>
+          </tr>
+        </table>
+      </div>
+      <div
+        class="flex items-center mt-10 text-center  justify-evenly md:flex md:flex-col md:justify-between"
+      >
+        <button
+          class="px-10 py-1 text-sm text-white bg-gray-500 cursor-pointer  rounded-3xl md:py-2 md:px-10 md:text-lg hover:bg-gray-700"
+        >
+          基本情報編集
+        </button>
+        <div>
+          <a href="emp_list_admin.html">社員一覧に戻る</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
