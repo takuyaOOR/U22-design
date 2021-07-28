@@ -27,9 +27,6 @@
           <input type="file" id="file_photo" class="hidden" accept="image/*" />
         </label>
 
-        <!-- <input id="file-sample" type="file" />
-        <img id="file-preview" class="w-40 h-40 mx-auto rounded-full" /> -->
-
         <div class="mt-5">
           <input
             type="text"
@@ -184,8 +181,8 @@
       </div>
     </div>
 
-    <!-- ファイルプレビュー用スクリプト -->
     <script>
+      // ファイルプレビュー用スクリプト
       document
         .getElementById("file_photo")
         .addEventListener("change", function (e) {
@@ -200,6 +197,8 @@
 
           img.src = blobUrl;
         });
+
+      // 追加の確認ダイアログ
     </script>
   </body>
 </html>
