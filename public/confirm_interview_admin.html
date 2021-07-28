@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/calendar.css" />
+    <title>面談日程確認画面</title>
+  </head>
+  <body>
+    <div class="pb-20 mx-16 mt-40 md:flex md:justify-evenly">
+      <!-- カレンダー -->
+      <div class="w-96 wrapper">
+        <!-- xxxx年xx月を表示 -->
+        <h1 id="header"></h1>
+
+        <!-- ボタンクリックで月移動 -->
+        <div id="next-prev-button">
+          <button id="prev" onclick="prev()">‹</button>
+          <button id="next" onclick="next()">›</button>
+        </div>
+
+        <!-- カレンダー -->
+        <div id="calendar"></div>
+      </div>
+
+      <!-- スケジュール -->
+      <div class="h-auto pb-10 mx-auto mt-10 border-2 border-gray-400 w-96">
+        <h2 class="mt-10 ml-16 text-xl text-gray-600">面談予約者</h2>
+
+        <!-- 面談予約者リスト -->
+        <ul class="mx-auto mt-10 ml-10 text-lg leading-10 text-gray-600">
+          <li class="pb-2">
+            10:00 ~ ○○○○○
+            <p class="inline text-sm">(体調について)</p>
+          </li>
+          <li class="pb-2">
+            11:00 ~ ○○○○○
+            <p class="inline text-sm">(業務について)</p>
+          </li>
+          <li class="pb-2">
+            12:00 ~ ○○○○○
+            <p class="inline text-sm">(キャリアについて)</p>
+          </li>
+          <li class="pb-2">
+            13:00 ~ ○○○○○
+            <p class="inline text-sm">(体調について)</p>
+          </li>
+        </ul>
+
+        <div class="mt-10 mr-5 text-right" class="bg-red-200">
+          <a href="emp_list_admin.html">社員一覧に戻る</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/calendar.js"></script>
+  </body>
+</html>
