@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- モーダル用css -->
-    <link rel="stylesheet" href="css/modal.css" />
-    <title>社員一覧</title>
+
+    <!-- Alpine.js -->
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+
+    <title>社員一覧 / 打刻</title>
   </head>
-  <body class="text-gray-600">
+  <!-- x-dataで社員一覧画面か打刻画面かを判断 -->
+  <body class="text-gray-600" x-data="{ list : true }">
     <!-- ヘッダー -->
     <div class="flex justify-between m-8">
       <div>
-        <h1 class="text-3xl font-semibold">社員一覧</h1>
+        <h1
+          class="text-3xl font-semibold"
+          x-text=" list ? '社員一覧' : '社員スケジュール' "
+        ></h1>
         <h4 class="text-lg" id="today"></h4>
       </div>
 
@@ -137,134 +146,132 @@
       </div>
     </div>
 
-    <!-- 社員リスト -->
-    <p id="order_disp" class="ml-10 text-gray-400 md:ml-28 mt-14">
-      表示:人事部
-    </p>
-    <div
-      class="grid w-10/12 grid-cols-1 gap-3 mx-auto mt-5 mb-20 md:grid-cols-3"
-    >
-      <!-- 絞り込みした社員を表示 -->
+    <!-- タブによって社員リストと打刻管理画面を切り替え -->
+    <nav class="mt-5 ml-10 text-gray-400 md:ml-28">
+      <ul class="py-2">
+        <li class="flex" x-bind:class="list ? 'text-gray-600' : ''">
+          <a href="#emp-list" x-on:click="list = true ">社員一覧</a>
+          <p class="ml-3" x-text=" list ? '&#10003;' : '' "></p>
+        </li>
+        <li class="flex" x-bind:class="list ? '' : 'text-gray-600'">
+          <a href="#emp-schedule" x-on:click="list = false "
+            >社員スケジュール</a
+          >
+          <p class="ml-3" x-text=" list ? '' : '&#10003;' "></p>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- 表示項目 -->
+    <p id="order_disp" class="mt-5 ml-10 text-gray-400 md:ml-28">表示:人事部</p>
+
+    <!-- 社員一覧が選択されているとき -->
+    <div x-bind:class="list ? '' : 'hidden'">
       <div
-        class="flex border-2 cursor-pointer rounded-xl"
-        onclick="location.href='emp_detail_admin.html'"
+        class="grid w-10/12 grid-cols-1 gap-3 mx-auto mt-5 mb-20 md:grid-cols-3"
       >
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
+        <!-- 絞り込みした社員を表示 -->
+        <div
+          class="flex border-2 cursor-pointer rounded-xl"
+          onclick="location.href='emp_detail_admin.html'"
+        >
+          <img
+            src="img/profile_icon.png"
+            alt="プロフィール画像"
+            class="w-20 h-20 m-3"
+          />
+          <div class="mt-3">
+            <h4>人事部</h4>
+            <div class="mt-2 ml-28 md:ml-1">
+              <h2 class="text-xl">弓場賢義</h2>
+              <h4 class="text-xs">Yumiba Takaki</h4>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
-      </div>
 
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
+        <div class="flex border-2 rounded-xl">
+          <img
+            src="img/profile_icon.png"
+            alt="プロフィール画像"
+            class="w-20 h-20 m-3"
+          />
+          <div class="mt-3">
+            <h4>人事部</h4>
+            <div class="mt-2 ml-28 md:ml-1">
+              <h2 class="text-xl">弓場賢義</h2>
+              <h4 class="text-xs">Yumiba Takaki</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex border-2 rounded-xl">
+          <img
+            src="img/profile_icon.png"
+            alt="プロフィール画像"
+            class="w-20 h-20 m-3"
+          />
+          <div class="mt-3">
+            <h4>人事部</h4>
+            <div class="mt-2 ml-28 md:ml-1">
+              <h2 class="text-xl">弓場賢義</h2>
+              <h4 class="text-xs">Yumiba Takaki</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex border-2 rounded-xl">
+          <img
+            src="img/profile_icon.png"
+            alt="プロフィール画像"
+            class="w-20 h-20 m-3"
+          />
+          <div class="mt-3">
+            <h4>人事部</h4>
+            <div class="mt-2 ml-28 md:ml-1">
+              <h2 class="text-xl">弓場賢義</h2>
+              <h4 class="text-xs">Yumiba Takaki</h4>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
-      </div>
+    <!-- 社員スケジュールが選択されているとき -->
+    <div x-bind:class="list ? 'hidden' : ''">
+      <div class="w-10/12 mx-auto mt-5 mb-20">
+        <table class="w-full">
+          <tr>
+            <th>名前</th>
+            <th>予定</th>
+            <th>開始</th>
+            <th>終了</th>
+            <th>実働時間</th>
+            <th>メモ</th>
+          </tr>
 
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex border-2 rounded-xl">
-        <img
-          src="img/profile_icon.png"
-          alt="プロフィール画像"
-          class="w-20 h-20 m-3"
-        />
-        <div class="mt-3">
-          <h4>人事部</h4>
-          <div class="mt-2 ml-28 md:ml-1">
-            <h2 class="text-xl">弓場賢義</h2>
-            <h4 class="text-xs">Yumiba Takaki</h4>
-          </div>
-        </div>
+          <tr>
+            <!-- 名前 -->
+            <td>弓場 賢義</td>
+            <!-- 予定 -->
+            <td>
+              <select class="border-b-2 focus:outline-none" name="schedule">
+                <option value="">出社</option>
+                <option value="">退勤</option>
+                <option value="">社外</option>
+                <option value="">午前休</option>
+                <option value="">午後休</option>
+              </select>
+            </td>
+            <!-- 開始時刻 -->
+            <td>9:00</td>
+            <!-- 終了時刻 -->
+            <td>18:31</td>
+            <!-- 実働時間 -->
+            <td>7:31</td>
+            <!-- メモ -->
+            <td><input type="text" class="border-b-2 focus:outline-none" /></td>
+          </tr>
+        </table>
       </div>
     </div>
 

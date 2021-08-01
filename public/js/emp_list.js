@@ -55,5 +55,3 @@ order_right_btn.addEventListener("click", function () {
   order_left_btn.innerHTML = "50音順";
   order_right_btn.innerHTML = "&#10003;入社順";
 });
-
-// アコーディオンメニュー
